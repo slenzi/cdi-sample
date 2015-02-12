@@ -1,0 +1,68 @@
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.lenzi.cdisample</groupId>
+	<artifactId>cdi-sample</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>cdi-sample Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<version.junit>4.12</version.junit>
+		<version.javaee>7.0</version.javaee>
+		<version.javax.servlet>3.1.0</version.javax.servlet>
+		<version.cdi>1.2</version.cdi>
+		<version.weld>2.2.9.Final</version.weld>
+	</properties>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${version.junit}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${version.javax.servlet}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!--
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>${version.cdi}</version>
+		</dependency>		
+		-->
+		
+		<dependency>
+			<groupId>org.jboss.weld.servlet</groupId>
+			<artifactId>weld-servlet</artifactId>
+			<version>${version.weld}</version>
+		</dependency>	
+				
+	</dependencies>
+	
+	<repositories>
+		
+		<repository>
+			<id>central</id>
+			<name>ECOG Internal Repository</name>
+			<url>https://dev.webapps.ecog.org/archiva/repository/internal/</url>
+		</repository>
+		
+	</repositories>	
+	
+	<build>
+		<finalName>cdi-sample</finalName>
+	</build>
+	
+</project>

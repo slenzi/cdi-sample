@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+For use with Apache Open Web Beans.
+
+Service provider interface (SPI) for providing beans by using Apache Open Web Beans ManagerObjectFactory
+See web.xml where we reference this "BeanManager"
+-->
+<!--
+<Context>
+    <Resource name="BeanManager" auth="Container"
+        type="javax.enterprise.inject.spi.BeanManager"
+        factory="org.apache.webbeans.container.ManagerObjectFactory" />
+</Context>
+-->
+
+<!--
+For JBoss Weld
+
+Service provider interface (SPI) for providing beans by using JBoss Weld ManagerObjectFactory
+See web.xml where we reference this "BeanManager"
+-->
+<Context>
+	<Resource name="BeanManager" auth="Container"
+		type="javax.enterprise.inject.spi.BeanManager"
+		factory="org.jboss.weld.resources.ManagerObjectFactory"/>
+</Context>
