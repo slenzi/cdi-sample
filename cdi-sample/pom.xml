@@ -17,6 +17,7 @@
 		<version.javax.servlet>3.1.0</version.javax.servlet>
 		<version.cdi>1.2</version.cdi>
 		<version.weld>2.2.9.Final</version.weld>
+		<version.joda.time>2.7</version.joda.time>
 	</properties>
 	
 	<dependencies>
@@ -34,6 +35,13 @@
 			<version>${version.javax.servlet}</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- Date & time library -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${version.joda.time}</version>
+		</dependency>		
 		
 		<!-- CDI Implementation -->
 		<dependency>
