@@ -13,6 +13,9 @@
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:comp/env/jdbc/oracle/ecogtst/ecoguser</jta-data-source>
+		
+		<class>org.lenzi.cdisample.model.prs.Person</class>
+		
         <properties>
             <!-- Oracle -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
