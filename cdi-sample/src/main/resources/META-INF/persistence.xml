@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence 
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+    
+    <!-- 
+    Oracle Setup
+    -->
+    <persistence-unit name="OraclePersistenceUnit" transaction-type="RESOURCE_LOCAL">
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:comp/env/jdbc/oracle/ecogtst/ecoguser</jta-data-source>
+        <properties>
+            <!-- Oracle -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.generate_statistics" value="true"/>
+            <!-- Scan for all entity beans, both class files and hibernate hbm files -->
+            <!--
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>
+            -->
+            <property name="hibernate.show_sql" value="true"/>          
+        </properties>
+        
+    </persistence-unit> 
+    
+</persistence>

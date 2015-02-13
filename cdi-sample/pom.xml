@@ -17,6 +17,8 @@
 		<version.javax.servlet>3.1.0</version.javax.servlet>
 		<version.cdi>1.2</version.cdi>
 		<version.weld>2.2.9.Final</version.weld>
+		<version.hibernate>4.3.8.Final</version.hibernate>
+		<version.jandex>1.2.3.Final</version.jandex>
 		<version.joda.time>2.7</version.joda.time>
 	</properties>
 	
@@ -48,7 +50,21 @@
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
 			<version>${version.weld}</version>
-		</dependency>	
+		</dependency>
+		
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${version.hibernate}</version>
+			<classifier/>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jandex</artifactId>
+			<version>${version.jandex}</version>
+		</dependency>
 				
 	</dependencies>
 	

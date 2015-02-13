@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 
 
 
+
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.lenzi.cdisample.bean.Hello;
+import org.lenzi.cdisample.repository.PersonRepository;
 
 @WebServlet(urlPatterns = "/sample")
 public class SampleController extends HttpServlet {
@@ -26,6 +28,9 @@ public class SampleController extends HttpServlet {
 	
 	@Inject
 	private Hello hello;
+	
+	@Inject
+	private PersonRepository personRepository;
 
 	public SampleController() {}
 
@@ -41,10 +46,16 @@ public class SampleController extends HttpServlet {
 	
 	/**
 	 * Get our hello message.
+	 * 
 	 * @return
 	 */
 	public String getHelloMessage(){
-		return ((hello != null) ? hello.getHello() : "Boo. No CDI...");
+		
+		StringBuffer buf = new StringBuffer();
+		buf.append( ((hello != null) ? hello.getHello() : "Boo. No CDI...") ).append("\n")
+		.append( ((personRepository != null) ? "Have person repository" : "Boo. Check JPA setup") ).append("\n");
+		
+		return buf.toString();
 	}
 
 }
