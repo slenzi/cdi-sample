@@ -68,6 +68,7 @@
 				
 	</dependencies>
 	
+	<!--  
 	<repositories>
 		
 		<repository>
@@ -77,6 +78,7 @@
 		</repository>
 		
 	</repositories>	
+	-->
 	
 	<build>
 		<finalName>cdi-sample</finalName>
