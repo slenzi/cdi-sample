@@ -6,7 +6,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
-import org.lenzi.cdisample.model.prs.Person;
+import org.lenzi.cdisample.model.Person;
 
 /**
  * Repository for person data...
@@ -14,6 +14,7 @@ import org.lenzi.cdisample.model.prs.Person;
  * @author sal
  *
  */
+@Repository
 public class PersonRepository extends AbstractRepository {
 
 	/**

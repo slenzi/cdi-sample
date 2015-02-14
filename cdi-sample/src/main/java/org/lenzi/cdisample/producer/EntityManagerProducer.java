@@ -1,22 +1,23 @@
 package org.lenzi.cdisample.producer;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+@ApplicationScoped
 public class EntityManagerProducer {
 
-	@PersistenceContext(unitName="OraclePersistenceUnit")
-	private EntityManager oraEntityManager;	
-	
-	public EntityManagerProducer() { }
+	@PersistenceContext(unitName="PostgresPersistenceUnit")
+	private EntityManager postgresEntityManager;
 	
 	@Produces
-	@Default
-	public EntityManager getOracleEntityManager(){
-		return oraEntityManager;
+	@RequestScoped
+	public EntityManager getPostgresEntityManager(){
+		return postgresEntityManager;
 	}
 	
     protected void closeEntityManager(@Disposes @Default EntityManager entityManager){

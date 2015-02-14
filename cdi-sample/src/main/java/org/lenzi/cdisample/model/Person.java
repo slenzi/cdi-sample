@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.lenzi.cdisample.model.prs;
+package org.lenzi.cdisample.model;
 
 import java.io.Serializable;
 
@@ -17,7 +17,7 @@ import javax.persistence.Transient;
  *
  */
 @Entity
-@Table(name = "PEOPLE", schema = "PRS")
+@Table(name = "PEOPLE", schema = "TEST")
 public class Person implements Serializable {
 
 	/**
@@ -41,9 +41,6 @@ public class Person implements Serializable {
 	
     @Column(name = "MNAME", nullable = true)
 	private String middleName = null;
-	
-    @Column(name = "DEGREES", nullable = true)
-	private String degrees = null;
 	
 	/**
 	 * 
@@ -120,20 +117,6 @@ public class Person implements Serializable {
 	 */
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
-	}
-
-	/**
-	 * @return the degrees
-	 */
-	public String getDegrees() {
-		return degrees;
-	}
-
-	/**
-	 * @param degrees the degrees to set
-	 */
-	public void setDegrees(String degrees) {
-		this.degrees = degrees;
 	}
 
 	/* (non-Javadoc)

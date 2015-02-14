@@ -51,11 +51,16 @@ public class SampleController extends HttpServlet {
 	 */
 	public String getHelloMessage(){
 		
-		StringBuffer buf = new StringBuffer();
-		buf.append( ((hello != null) ? hello.getHello() : "Boo. No CDI...") ).append("\n")
-		.append( ((personRepository != null) ? "Have person repository" : "Boo. Check JPA setup") ).append("\n");
+		boolean haveHello = ((hello != null) ? true : false);
+		boolean havePersonRepository = ((personRepository != null) ? true : false);
+		boolean haveEntityManager = havePersonRepository && personRepository.haveEntityManager();
 		
-		return buf.toString();
+		StringBuffer buff = new StringBuffer();
+		buff.append( ((haveHello) ? hello.getHello() : "Boo... no CDI injection.") ).append("\n")
+			.append( ((havePersonRepository) ? "Have person repository" : "Boo... no person respository.") ).append("\n")
+			.append( ((haveEntityManager) ? "Yay! Have entity manager" : "Boo...no entity manager") ).append("\n");
+		
+		return buff.toString();
 	}
 
 }

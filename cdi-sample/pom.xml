@@ -15,11 +15,13 @@
 		<version.junit>4.12</version.junit>
 		<version.javaee>7.0</version.javaee>
 		<version.javax.servlet>3.1.0</version.javax.servlet>
+		<version.logback>1.1.2</version.logback>
 		<version.cdi>1.2</version.cdi>
 		<version.weld>2.2.9.Final</version.weld>
 		<version.hibernate>4.3.8.Final</version.hibernate>
 		<version.jandex>1.2.3.Final</version.jandex>
 		<version.joda.time>2.7</version.joda.time>
+		<version.jdbc.postgres>9.1-901-1.jdbc4</version.jdbc.postgres>
 	</properties>
 	
 	<dependencies>
@@ -29,6 +31,12 @@
 			<artifactId>junit</artifactId>
 			<version>${version.junit}</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${version.logback}</version>
 		</dependency>
 
 		<dependency>
@@ -65,6 +73,13 @@
 			<artifactId>jandex</artifactId>
 			<version>${version.jandex}</version>
 		</dependency>
+		
+		<!-- postgres jdbc driver -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${version.jdbc.postgres}</version>
+		</dependency>			
 				
 	</dependencies>
 	

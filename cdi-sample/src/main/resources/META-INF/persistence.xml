@@ -9,6 +9,7 @@
     <!-- 
     Oracle Setup
     -->
+    <!--
     <persistence-unit name="OraclePersistenceUnit" transaction-type="RESOURCE_LOCAL">
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
@@ -17,16 +18,52 @@
 		<class>org.lenzi.cdisample.model.prs.Person</class>
 		
         <properties>
-            <!-- Oracle -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
 			<property name="hibernate.generate_statistics" value="true"/>
-            <!-- Scan for all entity beans, both class files and hibernate hbm files -->
-            <!--
-            <property name="hibernate.archive.autodetection" value="class, hbm"/>
-            -->
             <property name="hibernate.show_sql" value="true"/>          
         </properties>
         
-    </persistence-unit> 
+    </persistence-unit>
+    -->
+    
+    <!-- 
+    Postgres Setup
+    -->
+	<persistence-unit name="PostgresPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+	
+		<!--  
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		-->
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		
+		<class>org.lenzi.cdisample.model.Person</class>
+		
+		<!--  
+		<properties>
+			<property name="javax.persistence.target-database" value="PostgreSQL" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/testdb" />
+			<property name="javax.persistence.jdbc.user" value="slenzi" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="eclipselink.logging.level" value="ALL" />
+		</properties>
+		-->
+		<properties>
+            
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/testdb" />
+            <property name="hibernate.connection.username" value="slenzi" />
+            <property name="hibernate.connection.password" value="" />
+            
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            
+       		<property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="false" />
+	
+		</properties>
+        
+    </persistence-unit>
     
 </persistence>
