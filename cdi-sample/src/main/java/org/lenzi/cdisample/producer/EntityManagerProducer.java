@@ -14,12 +14,19 @@ import org.lenzi.cdisample.db.repository.PostgresUnit;
 @ApplicationScoped
 public class EntityManagerProducer {
 
-	//@PersistenceContext(unitName="PostgresPersistenceUnit")
-	//private EntityManager postgresEntityManager;
+	/*
+	@PersistenceContext(unitName="PostgresPersistenceUnit")
+	private EntityManager postgresEntityManager;
+	*/
 	
 	@Inject
 	private EntityManagerFactory emf;
 	
+	/**
+	 * Get entity manager for postgres persistence unit.
+	 * 
+	 * @return
+	 */
 	@Produces
 	@RequestScoped
 	@PostgresUnit
@@ -38,8 +45,7 @@ public class EntityManagerProducer {
 		return postgresEntityManager;
 	}
 	*/
-	
-	
+		
     protected void closeEntityManager(@Disposes @PostgresUnit EntityManager entityManager){
         if (entityManager.isOpen()){
             entityManager.close();
