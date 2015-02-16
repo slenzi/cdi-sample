@@ -3,13 +3,6 @@ package org.lenzi.cdisample.web.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//import javax.inject.Inject;
-
-
-
-
-
-
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.lenzi.cdisample.bean.Hello;
 import org.lenzi.cdisample.model.Person;
-import org.lenzi.cdisample.repository.PersonRepository;
+import org.lenzi.cdisample.service.PersonService;
 import org.slf4j.Logger;
 
 @WebServlet(urlPatterns = "/sample")
@@ -37,7 +30,7 @@ public class SampleController extends HttpServlet {
 	private Hello hello;
 	
 	@Inject
-	private PersonRepository personRepository;
+	private PersonService personService;
 
 	public SampleController() {}
 
@@ -47,7 +40,7 @@ public class SampleController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-        out.println(getHelloMessage());
+        out.println(testCDI());
         out.close();
 	}
 	
@@ -56,25 +49,27 @@ public class SampleController extends HttpServlet {
 	 * 
 	 * @return
 	 */
-	public String getHelloMessage(){
+	public String testCDI(){
 		
-		logger.debug("getHelloMessage() called");
+		logger.debug("testCDI() called");
 		
 		boolean haveHello = ((hello != null) ? true : false);
-		boolean havePersonRepository = ((personRepository != null) ? true : false);
-		boolean haveEntityManager = havePersonRepository && personRepository.haveEntityManager();
-		
-		Person per = null;
-		if(havePersonRepository && haveEntityManager){
-			per = personRepository.getPersonById(1);
-		}
-		boolean havePerson = ((per != null) ? true : false);
+		boolean havePeopleService = ((personService != null) ? true : false);
 		
 		StringBuffer buff = new StringBuffer();
 		buff.append( ((haveHello) ? hello.getHello() : "Boo... no CDI injection.") ).append("\n")
-			.append( ((havePersonRepository) ? "Yay! Have person repository" : "Boo... no person respository.") ).append("\n")
-			.append( ((haveEntityManager) ? "Yay! Have entity manager" : "Boo...no entity manager") ).append("\n")
-			.append( ((havePerson) ? "Yay! Have person. " + per.getFirstName() + " " + per.getLastName() : "Boo...no entity manager") ).append("\n");
+			.append( ((havePeopleService) ? "Yay! Have person service" : "Boo... no person service.") ).append("\n");
+		
+		logger.debug(buff.toString());
+		
+		Person per = null;
+		if(havePeopleService){
+			per = personService.getPersonById(1);
+		}
+		boolean havePerson = ((per != null) ? true : false);
+		buff.append( ((havePerson) ? "Yay! Have person. " + per.getFirstName() + " " + per.getLastName() : "Boo...no person") ).append("\n");
+		
+		logger.debug(buff.toString());
 		
 		return buff.toString();
 	}

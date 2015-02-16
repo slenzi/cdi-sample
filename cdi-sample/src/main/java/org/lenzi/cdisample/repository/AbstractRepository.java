@@ -13,6 +13,7 @@ public class AbstractRepository implements Serializable {
 	private static final long serialVersionUID = -7142560902806805291L;
 	
 	@Inject
+	@PostgresUnit
 	protected EntityManager entityManager;	
 	
 	public AbstractRepository() {

@@ -1,6 +1,10 @@
 package org.lenzi.cdisample.repository;
 
+import java.io.Serializable;
+
 import javax.inject.Inject;
+import javax.persistence.Transient;
+import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -17,11 +21,12 @@ import org.slf4j.Logger;
  *
  */
 @Repository
-public class PersonRepository extends AbstractRepository {
+public class PersonRepository extends AbstractRepository implements Serializable {
 
 	/**
 	 * 
 	 */
+	@Transient
 	private static final long serialVersionUID = -5619951818085361996L;
 	
 	@Inject
@@ -31,11 +36,20 @@ public class PersonRepository extends AbstractRepository {
 		
 	}
 	
+	/**
+	 * Fetch person by person ID.
+	 * 
+	 * @param id - The person ID.
+	 * @return
+	 */
 	public Person getPersonById(int id){
 		
 		logger.info("Fetching person by person id = " + id);
 		
-		CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
+		logger.debug("Getting entity manager.");
+		//EntityManager pgEm = getEntityManager();
+		
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<Person> query	= cb.createQuery(Person.class);
 		Root<Person> root = query.from(Person.class);
 		
@@ -46,7 +60,11 @@ public class PersonRepository extends AbstractRepository {
 	
 		Person p = null;
 		try{
-			p = getEntityManager().createQuery(query).getSingleResult();
+			
+			logger.debug("Running query.");
+			p = entityManager.createQuery(query).getSingleResult();
+			logger.debug("Query execution complete.");
+			
 		} catch (NoResultException e){
 			logger.error("Error querying person for person id " + id + ". " + e.getMessage());
 			return null;
