@@ -22,6 +22,8 @@
 		<version.hibernate>4.3.8.Final</version.hibernate>
 		<version.hibernate.jpa>1.0.0.Final</version.hibernate.jpa>
 		<version.jandex>1.2.3.Final</version.jandex>
+		<version.jersey>2.16</version.jersey>
+		<version.jersey.cdi>2.14</version.jersey.cdi>
 		<version.joda.time>2.7</version.joda.time>
 		<version.jdbc.postgres>9.1-901-1.jdbc4</version.jdbc.postgres>
 	</properties>
@@ -101,6 +103,27 @@
 			<version>${version.jandex}</version>
 		</dependency>
 		
+		<!-- Jersey -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${version.jersey}</version>
+		</dependency>
+		
+		<!-- Jerson jackson JSON marshalling -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${version.jersey}</version>
+		</dependency>
+		
+		<!-- Jersey + CDI integration -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers.glassfish</groupId>
+			<artifactId>jersey-gf-cdi</artifactId>
+			<version>${version.jersey.cdi}</version>
+		</dependency>
+
 		<!-- Postgres JDBC driver -->
 		<dependency>
 			<groupId>postgresql</groupId>
