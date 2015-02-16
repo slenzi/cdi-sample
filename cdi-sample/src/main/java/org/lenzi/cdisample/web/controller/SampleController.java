@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.lenzi.cdisample.bean.Hello;
-import org.lenzi.cdisample.model.Person;
+import org.lenzi.cdisample.db.model.Person;
 import org.lenzi.cdisample.service.PersonService;
 import org.slf4j.Logger;
 

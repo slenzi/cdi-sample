@@ -1,17 +1,16 @@
-package org.lenzi.cdisample.repository;
+package org.lenzi.cdisample.db.repository;
 
 import java.io.Serializable;
 
 import javax.inject.Inject;
 import javax.persistence.Transient;
-import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import org.lenzi.cdisample.model.Person;
-import org.lenzi.cdisample.model.Person_;
+import org.lenzi.cdisample.db.model.Person;
+import org.lenzi.cdisample.db.model.Person_;
 import org.slf4j.Logger;
 
 /**
@@ -44,7 +43,7 @@ public class PersonRepository extends AbstractRepository implements Serializable
 	 */
 	public Person getPersonById(int id){
 		
-		logger.info("Fetching person by person id = " + id);
+		logger.debug("Fetching person by person id = " + id);
 		
 		logger.debug("Getting entity manager.");
 		//EntityManager pgEm = getEntityManager();

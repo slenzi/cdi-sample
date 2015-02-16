@@ -38,7 +38,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		
-		<class>org.lenzi.cdisample.model.Person</class>
+		<class>org.lenzi.cdisample.db.model.Person</class>
 		
 		<!--  
 		<properties>

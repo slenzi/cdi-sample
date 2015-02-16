@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import javax.inject.Inject;
 
-import org.lenzi.cdisample.model.Person;
-import org.lenzi.cdisample.repository.PersonRepository;
+import org.lenzi.cdisample.db.model.Person;
+import org.lenzi.cdisample.db.repository.PersonRepository;
 import org.slf4j.Logger;
 
 /**
@@ -36,7 +36,10 @@ public class PersonServiceImpl implements PersonService, Serializable {
 	public Person getPersonById(int id) {
 		
 		logger.debug("Fetching person by id = " + id);
-		logger.debug("Have entity manager = " + personRepository.haveEntityManager());
+		if(personRepository.haveEntityManager()){
+			logger.debug("Have entity manager = " + personRepository.haveEntityManager());
+			personRepository.debugEntityManager();
+		}
 		
 		return personRepository.getPersonById(1);
 	}

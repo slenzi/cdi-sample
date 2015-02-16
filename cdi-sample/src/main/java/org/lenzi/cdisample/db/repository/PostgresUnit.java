@@ -1,4 +1,4 @@
-package org.lenzi.cdisample.repository;
+package org.lenzi.cdisample.db.repository;
 
 import java.lang.annotation.Target;
 import java.lang.annotation.Retention;

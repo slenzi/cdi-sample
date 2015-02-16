@@ -19,6 +19,7 @@
 		<version.cdi>1.2</version.cdi>
 		<version.weld>2.2.9.Final</version.weld>
 		<version.hibernate>4.3.8.Final</version.hibernate>
+		<version.hibernate.jpa>1.0.0.Final</version.hibernate.jpa>
 		<version.jandex>1.2.3.Final</version.jandex>
 		<version.joda.time>2.7</version.joda.time>
 		<version.jdbc.postgres>9.1-901-1.jdbc4</version.jdbc.postgres>
@@ -65,6 +66,18 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${version.hibernate}</version>
+			<classifier/>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${version.hibernate}</version>
+			<classifier/>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>${version.hibernate.jpa}</version>
 			<classifier/>
 		</dependency>
 		<!-- For generating JPA meta models for type safe queries. -->

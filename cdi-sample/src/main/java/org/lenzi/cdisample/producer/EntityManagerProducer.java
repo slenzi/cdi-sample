@@ -6,7 +6,7 @@ import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.lenzi.cdisample.repository.PostgresUnit;
+import org.lenzi.cdisample.db.repository.PostgresUnit;
 
 //@ApplicationScoped
 //@SessionScoped

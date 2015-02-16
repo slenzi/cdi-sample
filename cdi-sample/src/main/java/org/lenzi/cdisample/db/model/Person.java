@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.lenzi.cdisample.model;
+package org.lenzi.cdisample.db.model;
 
 import java.io.Serializable;
 
