@@ -119,7 +119,6 @@
 		Apache Deltaspike JPA. The JPA module provides a transactional context and scope, enabling 
 		execution of methods within transactions.
 		-->
-		<!--
 		<dependency>
 		    <groupId>org.apache.deltaspike.modules</groupId>
 		    <artifactId>deltaspike-jpa-module-api</artifactId>
@@ -132,7 +131,6 @@
 		    <version>${version.deltaspike}</version>
 		    <scope>runtime</scope>
 		</dependency>
-		-->
 		<!--
 		Apache Deltaspike Container Control. Provides a way to generically run CDI containers from
 		inside of unit tests or Java SE applications.
