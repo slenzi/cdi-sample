@@ -16,7 +16,7 @@
 		<version.javaee>7.0</version.javaee>
 		<version.javax.servlet>3.1.0</version.javax.servlet>
 		<version.logback>1.1.2</version.logback>
-		<version.cdi>1.2</version.cdi>
+		<version.javax.cdi>1.2</version.javax.cdi>
 		<version.weld>2.2.9.Final</version.weld>
 		<version.weld.se>1.0.1-Final</version.weld.se>
 		<version.deltaspike>1.2.1</version.deltaspike>
@@ -58,21 +58,27 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>${version.joda.time}</version>
-		</dependency>		
+		</dependency>
 		
+		<!-- CDI API (not I need this?) -->
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>${version.javax.cdi}</version>
+		</dependency>
+			
 		<!-- CDI Implementation -->
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
 			<version>${version.weld}</version>
 		</dependency>
-		<!--
+		<!-- Weld SE is required by Apache Deltaspike Weld Integration -->
 		<dependency>
 			<groupId>org.jboss.weld.se</groupId>
 			<artifactId>weld-se-core</artifactId>
 			<version>${version.weld}</version>
 		</dependency>
-		-->
 		
 		<!-- Apache Deltaspike Core API & Implementation -->
 		<!--
@@ -90,13 +96,11 @@
 		</dependency>
 		-->
 		<!-- Apache Deltaspike JBoss Weld CDI integration -->
-		<!--
 		<dependency>
 		    <groupId>org.apache.deltaspike.cdictrl</groupId>
 		    <artifactId>deltaspike-cdictrl-weld</artifactId>
 		    <version>${version.deltaspike}</version>
 		</dependency>
-		-->
 		<!--
 		Apache Deltaspike JPA. The JPA module provides a transactional context and scope, enabling 
 		execution of methods within transactions.
@@ -125,7 +129,7 @@
 			<artifactId>deltaspike-cdictrl-api</artifactId>
 			<version>${version.deltaspike}</version>
 		</dependency>
-		-->
+		 -->
 
 		<!-- Hibernate -->
 		<dependency>
@@ -154,6 +158,7 @@
 		</dependency>
 
 		<!-- Jandex is a space efficient Java annotation indexer and offline reflection library. -->
+		<!-- Needed by Weld 2.2.x -->
 		<dependency>
 			<groupId>org.jboss</groupId>
 			<artifactId>jandex</artifactId>
