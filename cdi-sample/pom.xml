@@ -16,6 +16,7 @@
 		<version.javaee>7.0</version.javaee>
 		<version.javax.servlet>3.1.0</version.javax.servlet>
 		<version.logback>1.1.2</version.logback>
+		<version.slf4j.simple>1.7.7</version.slf4j.simple>
 		<version.javax.cdi>1.2</version.javax.cdi>
 		<version.weld>2.2.9.Final</version.weld>
 		<version.weld.se>1.0.1-Final</version.weld.se>
@@ -45,6 +46,14 @@
 			<artifactId>logback-classic</artifactId>
 			<version>${version.logback}</version>
 		</dependency>
+		<!--
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${version.slf4j.simple}</version>
+			<scope>runtime</scope>
+		</dependency>
+		-->
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -68,20 +77,26 @@
 		</dependency>
 			
 		<!-- CDI Implementation -->
+		<!-- Weld SE is required by Apache Deltaspike Weld Integration -->
+		<dependency>
+			<groupId>org.jboss.weld.se</groupId>
+			<artifactId>weld-se</artifactId>
+			<version>${version.weld}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
 			<version>${version.weld}</version>
 		</dependency>
-		<!-- Weld SE is required by Apache Deltaspike Weld Integration -->
+		<!--
 		<dependency>
 			<groupId>org.jboss.weld.se</groupId>
 			<artifactId>weld-se-core</artifactId>
 			<version>${version.weld}</version>
 		</dependency>
+		-->
 		
 		<!-- Apache Deltaspike Core API & Implementation -->
-		<!--
 		<dependency>
 		    <groupId>org.apache.deltaspike.core</groupId>
 		    <artifactId>deltaspike-core-api</artifactId>
@@ -94,7 +109,6 @@
 		    <version>${version.deltaspike}</version>
 		    <scope>runtime</scope>
 		</dependency>
-		-->
 		<!-- Apache Deltaspike JBoss Weld CDI integration -->
 		<dependency>
 		    <groupId>org.apache.deltaspike.cdictrl</groupId>
@@ -123,13 +137,11 @@
 		Apache Deltaspike Container Control. Provides a way to generically run CDI containers from
 		inside of unit tests or Java SE applications.
 		-->
-		<!--
 		<dependency>
 			<groupId>org.apache.deltaspike.cdictrl</groupId>
 			<artifactId>deltaspike-cdictrl-api</artifactId>
 			<version>${version.deltaspike}</version>
 		</dependency>
-		 -->
 
 		<!-- Hibernate -->
 		<dependency>
