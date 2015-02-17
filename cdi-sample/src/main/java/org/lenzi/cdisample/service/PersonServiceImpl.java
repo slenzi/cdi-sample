@@ -12,7 +12,6 @@ import org.slf4j.Logger;
  * Service for interacting with people resources.
  * 
  * @author slenzi
- *
  */
 @Service
 public class PersonServiceImpl implements PersonService, Serializable {

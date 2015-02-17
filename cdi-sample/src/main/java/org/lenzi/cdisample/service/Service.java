@@ -13,6 +13,11 @@ import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+/**
+ * Custom stereotype for local services (not web services)
+ * 
+ * @author slenzi
+ */
 @Named
 @ApplicationScoped
 @Stereotype
