@@ -19,6 +19,7 @@
 		<version.cdi>1.2</version.cdi>
 		<version.weld>2.2.9.Final</version.weld>
 		<version.weld.se>1.0.1-Final</version.weld.se>
+		<version.deltaspike>1.2.1</version.deltaspike>
 		<version.hibernate>4.3.8.Final</version.hibernate>
 		<version.hibernate.jpa>1.0.0.Final</version.hibernate.jpa>
 		<version.jandex>1.2.3.Final</version.jandex>
@@ -29,7 +30,8 @@
 	</properties>
 	
 	<dependencies>
-	
+
+		<!-- JUnit testing -->	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -64,11 +66,66 @@
 			<artifactId>weld-servlet</artifactId>
 			<version>${version.weld}</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.jboss.weld.se</groupId>
 			<artifactId>weld-se-core</artifactId>
 			<version>${version.weld}</version>
 		</dependency>
+		-->
+		
+		<!-- Apache Deltaspike Core API & Implementation -->
+		<!--
+		<dependency>
+		    <groupId>org.apache.deltaspike.core</groupId>
+		    <artifactId>deltaspike-core-api</artifactId>
+		    <version>${version.deltaspike}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.deltaspike.core</groupId>
+		    <artifactId>deltaspike-core-impl</artifactId>
+		    <version>${version.deltaspike}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		-->
+		<!-- Apache Deltaspike JBoss Weld CDI integration -->
+		<!--
+		<dependency>
+		    <groupId>org.apache.deltaspike.cdictrl</groupId>
+		    <artifactId>deltaspike-cdictrl-weld</artifactId>
+		    <version>${version.deltaspike}</version>
+		</dependency>
+		-->
+		<!--
+		Apache Deltaspike JPA. The JPA module provides a transactional context and scope, enabling 
+		execution of methods within transactions.
+		-->
+		<!--
+		<dependency>
+		    <groupId>org.apache.deltaspike.modules</groupId>
+		    <artifactId>deltaspike-jpa-module-api</artifactId>
+		    <version>${version.deltaspike}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.deltaspike.modules</groupId>
+		    <artifactId>deltaspike-jpa-module-impl</artifactId>
+		    <version>${version.deltaspike}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		-->
+		<!--
+		Apache Deltaspike Container Control. Provides a way to generically run CDI containers from
+		inside of unit tests or Java SE applications.
+		-->
+		<!--
+		<dependency>
+			<groupId>org.apache.deltaspike.cdictrl</groupId>
+			<artifactId>deltaspike-cdictrl-api</artifactId>
+			<version>${version.deltaspike}</version>
+		</dependency>
+		-->
 
 		<!-- Hibernate -->
 		<dependency>
