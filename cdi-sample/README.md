@@ -8,29 +8,29 @@ Sample application demonstrating how to use CDI in a Tomcat environment. (Non EE
 
 #### CDI Reference Implementation, JSR-299:
 
-JBoss Weld SE
-JBoss Weld Servlet
+* JBoss Weld SE
+* JBoss Weld Servlet
 
 #### Portable CDI Extensions:
 
-Apache Deltaspike Core
-Apache Deltaspike CDI Control Module
-Apache Deltaspike CDI Control Weld Integration Module
-Apache Deltaspike JPA Module
+* Apache Deltaspike Core
+* Apache Deltaspike CDI Control Module
+* Apache Deltaspike CDI Control Weld Integration Module
+* Apache Deltaspike JPA Module
 
 #### JAX-RS RESTful Services:
 
-Jersey Container Servlet
-Jersey CDI Integration Module
-Jersey Jackson JSON Module
+* Jersey Container Servlet
+* Jersey CDI Integration Module
+* Jersey Jackson JSON Module
 
 #### Object Relational Management (ORM)
 
-Hibernate ORM
-Hibernate JPA Metamodel generation
+* Hibernate ORM
+* Hibernate JPA Metamodel generation
 
 
 #### Database
 
-Postres DB
-Postgres JDBC
+* Postres DB
+* Postgres JDBC
